@@ -8,11 +8,12 @@ gem 'jquery-rails'
 gem 'pg'
 gem 'turbolinks', '~> 5'
 
-gem 'lazy_form', github: 'patriciomacadden/lazy_form'
+gem 'simple_form'
 gem 'slugalizer', github: 'nitrnitr/slugalizer'
 
 group :development, :test do
   gem 'byebug', platform: :mri
+  gem 'listen'
 end
 
 group :development do

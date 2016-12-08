@@ -1,0 +1,134 @@
+<p id="notice"><%= notice %></p>
+
+<h2>
+  <%= @list.title %>
+
+  <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#list-modal">
+    <i class="glyphicon glyphicon-pencil"></i>
+  </button>
+</h2>
+
+<% if @list.errors.any? %>
+  <script>
+    $(window).load(function(){
+      $('#list-modal').modal('show');
+    });
+  </script>
+<% end %>
+<div class="modal fade in" id="list-modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <%= simple_form_for(@list) do |f| %>
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Edit List Name</h4>
+        </div>
+        <div class="modal-body">
+          <%= f.input :title %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <%= f.button :submit, class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-3">
+    <label>This list was created</label>
+  </div>
+
+  <div class="col-sm-3">
+    <label>Last modified</label>
+  </div>
+
+  <div class="col-sm-6">
+    <label>Link to this list</label>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-3">
+    <p><%= @created_date %></p>
+  </div>
+
+  <div class="col-sm-3">
+    <p><%= @last_modified %></p>
+  </div>
+
+  <div class="col-sm-6">
+    <code><%= link_to @slug_link %></code>
+  </div>
+</div>
+
+
+<h3>Tasks</h3>
+
+New Simple Task
+<form action="<%= "/lists/#{@list.slug}/tasks" %>" method="POST">
+  <input type="text" name="task[description]" placeholder="Title">
+  <input type="hidden" name="task[type]" value="SimpleTask">
+  <select name="task[priority]">
+    <option value="low">Low</option>
+    <option value="medium">Medium</option>
+    <option value="high">High</option>
+  </select>
+  <input type="submit" value="Create">
+</form>
+
+New Long Task
+<form action=" <%= "/lists/#{@list.slug}/tasks" %>" method="POST">
+  <input type="text" name="task[description]" placeholder="Title">
+  <input type="hidden" name="task[type]" value="LongTask">
+  <select name="task[priority]">
+    <option value="low">Low</option>
+    <option value="medium">Medium</option>
+    <option value="high">High</option>
+  </select>
+
+  <select name="task[percentage]">
+    <option value="0">0%</option>
+    <option value="10">10%</option>
+    <option value="20">20%</option>
+    <option value="30">30%</option>
+    <option value="40">40%</option>
+    <option value="50">50%</option>
+    <option value="60">60%</option>
+    <option value="70">70%</option>
+    <option value="80">80%</option>
+    <option value="90">90%</option>
+    <option value="100">100%</option>
+  </select>
+  <input type="submit" value="Create">
+</form>
+
+New Temporary Task
+<form action=" <%= "/lists/#{@list.slug}/tasks" %>" method="POST">
+  <input type="text" name="task[description]" placeholder="Title">
+  <input type="date" name="task[start_date]">
+  <input type="date" name="task[end_date]">
+  <input type="hidden" name="task[type]" value="TempTask">
+  <select name="task[priority]">
+    <option value="low">Low</option>
+    <option value="medium">Medium</option>
+    <option value="high">High</option>
+  </select>
+  <input type="submit" value="Create">
+</form>
+
+<div>
+  <% unless @list.tasks.empty? %>
+    <% @list.tasks.each do |task| %>
+      <div>
+        <%#= render 'tasks/task', task: task.becomes(Task) %>
+        Task:<%= task.description %>
+      </div>
+    <% end %>
+  <% else %>
+    <h2>There are no tasks in this list</h2>
+  <% end %>
+</div>
+
+<%= link_to 'Back', lists_path, class: 'btn btn-default'  %>
