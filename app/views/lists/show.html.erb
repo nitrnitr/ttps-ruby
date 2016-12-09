@@ -1,156 +1,162 @@
-<p id="notice"><%= notice %></p>
+<div class="callout callout-notice">
+  <%= notice %>
+</div>
 
-<h2>
-  <%= @list.title %>
-
-  <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#list-modal">
-    <i class="glyphicon glyphicon-pencil"></i>
-  </button>
-</h2>
-
-<% if @list.errors.any? %>
-  <script>
-    $(window).load(function(){
-      $('#list-modal').modal('show');
-    });
-  </script>
-<% end %>
-<div class="modal fade in" id="list-modal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <%= simple_form_for(@list) do |f| %>
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="myModalLabel">Edit List Name</h4>
-        </div>
-        <div class="modal-body">
-          <%= f.input :title %>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <%= f.button :submit, class: "btn btn-primary" %>
-        </div>
-      <% end %>
+<div class="row">
+  <div class="col-sm-4 col-sm-offset-4">
+    <div class="box box-primary">
+      <div class="box-body">
+        <h3>
+          <%= simple_form_for(@list) do |f| %>
+            <%= f.input :title, value: @list.title %>
+            <%= f.button :submit, class: "btn btn-primary" %>
+          <% end %>
+        </h3>
+      </div>
     </div>
   </div>
 </div>
 
-<div class="row">
-  <div class="col-sm-3">
-    <label>This list was created</label>
+<div class="box box-primary">
+  <div class="box-header">
   </div>
+  <div class="box-body">
+    <div class="row">
+      <div class="col-sm-3">
+        <label>This list was created</label>
+      </div>
 
-  <div class="col-sm-3">
-    <label>Last modified</label>
-  </div>
+      <div class="col-sm-3">
+        <label>Last modified</label>
+      </div>
 
-  <div class="col-sm-6">
-    <label>Link to this list</label>
+      <div class="col-sm-6">
+        <label>Link to this list</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-3">
+        <p><%= @list.created_at %></p>
+      </div>
+
+      <div class="col-sm-3">
+        <p><%= @list.updated_at %></p>
+      </div>
+
+      <div class="col-sm-6">
+        <code><%= link_to @slug_link %></code>
+      </div>
+    </div>
   </div>
 </div>
 
-<div class="row">
-  <div class="col-sm-3">
-    <p><%= @created_date %></p>
-  </div>
 
-  <div class="col-sm-3">
-    <p><%= @last_modified %></p>
+<div class="box box-primary">
+  <div class="box-header">
+    <h3>Create new tasks for this list</h3>
   </div>
+  <div class="box-body">
+    New Simple Task
+    <form action="<%= "/lists/#{@list.slug}/tasks" %>" method="POST">
+      <input type="text" name="task[description]" placeholder="Title">
+      <input type="hidden" name="task[type]" value="SimpleTask">
+      <select name="task[priority]">
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
+      <input type="submit" value="Create">
+    </form>
 
-  <div class="col-sm-6">
-    <code><%= link_to @slug_link %></code>
+    New Long Task
+    <form action=" <%= "/lists/#{@list.slug}/tasks" %>" method="POST">
+      <input type="text" name="task[description]" placeholder="Title">
+      <input type="hidden" name="task[type]" value="LongTask">
+      <select name="task[priority]">
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
+      <input type="submit" value="Create">
+    </form>
+
+    New Temporary Task
+    <form action=" <%= "/lists/#{@list.slug}/tasks" %>" method="POST">
+      <input type="text" name="task[description]" placeholder="Title">
+      <input type="date" name="task[start_date]">
+      <input type="date" name="task[end_date]">
+      <input type="hidden" name="task[type]" value="TempTask">
+      <select name="task[priority]">
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
+      <input type="submit" value="Create">
+    </form>
+
   </div>
 </div>
 
 
-<h3>Create new tasks for this list</h3>
-
-New Simple Task
-<form action="<%= "/lists/#{@list.slug}/tasks" %>" method="POST">
-  <input type="text" name="task[description]" placeholder="Title">
-  <input type="hidden" name="task[type]" value="SimpleTask">
-  <select name="task[priority]">
-    <option value="low">Low</option>
-    <option value="medium">Medium</option>
-    <option value="high">High</option>
-  </select>
-  <input type="submit" value="Create">
-</form>
-
-New Long Task
-<form action=" <%= "/lists/#{@list.slug}/tasks" %>" method="POST">
-  <input type="text" name="task[description]" placeholder="Title">
-  <input type="hidden" name="task[type]" value="LongTask">
-  <select name="task[priority]">
-    <option value="low">Low</option>
-    <option value="medium">Medium</option>
-    <option value="high">High</option>
-  </select>
-  <input type="submit" value="Create">
-</form>
-
-New Temporary Task
-<form action=" <%= "/lists/#{@list.slug}/tasks" %>" method="POST">
-  <input type="text" name="task[description]" placeholder="Title">
-  <input type="date" name="task[start_date]">
-  <input type="date" name="task[end_date]">
-  <input type="hidden" name="task[type]" value="TempTask">
-  <select name="task[priority]">
-    <option value="low">Low</option>
-    <option value="medium">Medium</option>
-    <option value="high">High</option>
-  </select>
-  <input type="submit" value="Create">
-</form>
-
-
-<h3>Tasks on this list</h3>
-<div>
-  <% unless @list.tasks.empty? %>
-    <% @list.tasks.each do |task| %>
-      <div>
-        <form action=" <%= "/lists/#{@list.slug}/tasks/#{task.id}" %>" method="POST">
-          <input type="text" name="task[description]" value="<%= task.description %>">
-          <input type="hidden" name="_method" value="PUT">
-          <input type="hidden" name="task[type]" value="<%= task.class %>">
-          <select name="task[priority]">
-            <option value="low" <%= " selected" if task.priority == 'low' %>>Low</option>
-            <option value="medium" <%= " selected" if task.priority == 'medium' %>>Medium</option>
-            <option value="high" <%= " selected" if task.priority == 'high' %>>High</option>
-          </select>
-          <% if task.type == 'TempTask' %>
-            <input type="date" name="task[start_date]">
-            <input type="date" name="task[end_date]">
-          <% end %>
-          <% if task.type == 'LongTask' %>
-            <select name="task[percentage]">
-              <option value="0" <%= " selected" if task.percentage == 0 %>>0%</option>
-              <option value="10" <%= " selected" if task.percentage == 10 %>>10%</option>
-              <option value="20" <%= " selected" if task.percentage == 20 %>>20%</option>
-              <option value="30" <%= " selected" if task.percentage == 30 %>>30%</option>
-              <option value="40" <%= " selected" if task.percentage == 40 %>>40%</option>
-              <option value="50" <%= " selected" if task.percentage == 50 %>>50%</option>
-              <option value="60" <%= " selected" if task.percentage == 60 %>>60%</option>
-              <option value="70" <%= " selected" if task.percentage == 70 %>>70%</option>
-              <option value="80" <%= " selected" if task.percentage == 80 %>>80%</option>
-              <option value="90" <%= " selected" if task.percentage == 90 %>>90%</option>
-              <option value="100" <%= " selected" if task.percentage == 100 %>>100%</option>
+<div class="box box-primary">
+  <div class="box-header">
+    <h3>Tasks on this list</h3>
+  </div>
+  <div class="box-body">
+    <% unless @list.tasks.empty? %>
+      <% @list.tasks.each do |task| %>
+        <div>
+          <form action=" <%= "/lists/#{@list.slug}/tasks/#{task.id}" %>" method="POST">
+            <input type="text" name="task[description]" value="<%= task.description %>">
+            <input type="hidden" name="_method" value="PUT">
+            <input type="hidden" name="task[type]" value="<%= task.class %>">
+            <select name="task[priority]">
+              <option value="low" <%= " selected" if task.priority == 'low' %>>Low</option>
+              <option value="medium" <%= " selected" if task.priority == 'medium' %>>Medium</option>
+              <option value="high" <%= " selected" if task.priority == 'high' %>>High</option>
             </select>
-          <% end %>
+            <% if task.type == 'TempTask' %>
+              <input type="date" name="task[start_date]">
+              <input type="date" name="task[end_date]">
+            <% end %>
+            <% if task.type == 'LongTask' %>
+              <select name="task[percentage]">
+                <option value="0" <%= " selected" if task.percentage == 0 %>>0%</option>
+                <option value="10" <%= " selected" if task.percentage == 10 %>>10%</option>
+                <option value="20" <%= " selected" if task.percentage == 20 %>>20%</option>
+                <option value="30" <%= " selected" if task.percentage == 30 %>>30%</option>
+                <option value="40" <%= " selected" if task.percentage == 40 %>>40%</option>
+                <option value="50" <%= " selected" if task.percentage == 50 %>>50%</option>
+                <option value="60" <%= " selected" if task.percentage == 60 %>>60%</option>
+                <option value="70" <%= " selected" if task.percentage == 70 %>>70%</option>
+                <option value="80" <%= " selected" if task.percentage == 80 %>>80%</option>
+                <option value="90" <%= " selected" if task.percentage == 90 %>>90%</option>
+                <option value="100" <%= " selected" if task.percentage == 100 %>>100%</option>
+              </select>
+            <% end %>
             <select name="task[state]">
               <option value="pending" <%= " selected" if task.state == "pending" %>>Pending</option>
               <option value="finished" <%= " selected" if task.state == "finished" %>>Finished</option>
-              <option value="in_progress" <%= " selected" if task.state == "in_progress" %>>In Progress</option>
-              <option value="expired" <%= " selected" if task.state == "expired" %>>Expired</option>
+
+              <% if task.type == 'LongTask' %>
+                <option value="in_progress" <%= " selected" if task.state == "in_progress" %>>In Progress</option>
+              <% end %>
+
+              <% if task.type == 'TempTask' %>
+                <option value="expired" <%= " selected" if task.state == "expired" %>>Expired</option>
+              <% end %>
             </select>
-          <input type="submit" value="Create">
-        </form>
-      </div>
+            <input type="submit" value="Update">(<%= task.type %>)
+          </form>
+        </div>
+      <% end %>
+    <% else %>
+      <h2>There are no tasks in this list</h2>
     <% end %>
-  <% else %>
-    <h2>There are no tasks in this list</h2>
-  <% end %>
 </div>
+  </div>
+</div>
+<div>
 
 <%= link_to 'Back', lists_path, class: 'btn btn-default'  %>

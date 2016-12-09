@@ -23,9 +23,12 @@ class ListsController < ApplicationController
   end
 
   def update
-    if @list.update(list_params)
+    @list.update list_params
+    if @list.valid?
+      @list.save
       redirect_to "/lists/#{@list.slug}", notice: 'List was successfully updated.'
     else
+      flash[:error] = 'List was not updated'
       render :show
     end
   end

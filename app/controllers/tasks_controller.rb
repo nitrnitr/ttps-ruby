@@ -5,6 +5,7 @@ class TasksController < ApplicationController
 
   def create
     task = Task.new task_params
+    task.state = 'in_progress'
     task.percentage = 0 if task.type == 'LongTask'
     task.list = @list
 
@@ -46,6 +47,6 @@ class TasksController < ApplicationController
   end
 
   def task_params
-    params.require(:task).permit(:title, :description, :priority, :percentage, :type, :start_date, :end_date)
+    params.require(:task).permit(:title, :state, :description, :priority, :percentage, :type, :start_date, :end_date)
   end
 end

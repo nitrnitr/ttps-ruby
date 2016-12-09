@@ -23,9 +23,10 @@ ActiveRecord::Schema.define(version: 20161207033049) do
   end
 
   create_table "tasks", force: :cascade do |t|
-    t.string   "type"
+    t.string   "type",        null: false
     t.string   "description", null: false
     t.string   "priority",    null: false
+    t.string   "state",       null: false
     t.date     "start_date"
     t.date     "end_date"
     t.integer  "percentage"
