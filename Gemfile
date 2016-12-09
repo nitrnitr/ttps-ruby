@@ -10,6 +10,9 @@ gem 'turbolinks', '~> 5'
 
 gem 'simple_form'
 gem 'slugalizer', github: 'nitrnitr/slugalizer'
+gem 'adminlte-rails'
+
+gem 'sass-rails'
 
 group :development, :test do
   gem 'byebug', platform: :mri

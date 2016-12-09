@@ -64,7 +64,7 @@
 </div>
 
 
-<h3>Tasks</h3>
+<h3>Create new tasks for this list</h3>
 
 New Simple Task
 <form action="<%= "/lists/#{@list.slug}/tasks" %>" method="POST">
@@ -87,20 +87,6 @@ New Long Task
     <option value="medium">Medium</option>
     <option value="high">High</option>
   </select>
-
-  <select name="task[percentage]">
-    <option value="0">0%</option>
-    <option value="10">10%</option>
-    <option value="20">20%</option>
-    <option value="30">30%</option>
-    <option value="40">40%</option>
-    <option value="50">50%</option>
-    <option value="60">60%</option>
-    <option value="70">70%</option>
-    <option value="80">80%</option>
-    <option value="90">90%</option>
-    <option value="100">100%</option>
-  </select>
   <input type="submit" value="Create">
 </form>
 
@@ -118,12 +104,48 @@ New Temporary Task
   <input type="submit" value="Create">
 </form>
 
+
+<h3>Tasks on this list</h3>
 <div>
   <% unless @list.tasks.empty? %>
     <% @list.tasks.each do |task| %>
       <div>
-        <%#= render 'tasks/task', task: task.becomes(Task) %>
-        Task:<%= task.description %>
+        <form action=" <%= "/lists/#{@list.slug}/tasks/#{task.id}" %>" method="POST">
+          <input type="text" name="task[description]" value="<%= task.description %>">
+          <input type="hidden" name="_method" value="PUT">
+          <input type="hidden" name="task[type]" value="<%= task.class %>">
+          <select name="task[priority]">
+            <option value="low" <%= " selected" if task.priority == 'low' %>>Low</option>
+            <option value="medium" <%= " selected" if task.priority == 'medium' %>>Medium</option>
+            <option value="high" <%= " selected" if task.priority == 'high' %>>High</option>
+          </select>
+          <% if task.type == 'TempTask' %>
+            <input type="date" name="task[start_date]">
+            <input type="date" name="task[end_date]">
+          <% end %>
+          <% if task.type == 'LongTask' %>
+            <select name="task[percentage]">
+              <option value="0" <%= " selected" if task.percentage == 0 %>>0%</option>
+              <option value="10" <%= " selected" if task.percentage == 10 %>>10%</option>
+              <option value="20" <%= " selected" if task.percentage == 20 %>>20%</option>
+              <option value="30" <%= " selected" if task.percentage == 30 %>>30%</option>
+              <option value="40" <%= " selected" if task.percentage == 40 %>>40%</option>
+              <option value="50" <%= " selected" if task.percentage == 50 %>>50%</option>
+              <option value="60" <%= " selected" if task.percentage == 60 %>>60%</option>
+              <option value="70" <%= " selected" if task.percentage == 70 %>>70%</option>
+              <option value="80" <%= " selected" if task.percentage == 80 %>>80%</option>
+              <option value="90" <%= " selected" if task.percentage == 90 %>>90%</option>
+              <option value="100" <%= " selected" if task.percentage == 100 %>>100%</option>
+            </select>
+          <% end %>
+            <select name="task[state]">
+              <option value="pending" <%= " selected" if task.state == "pending" %>>Pending</option>
+              <option value="finished" <%= " selected" if task.state == "finished" %>>Finished</option>
+              <option value="in_progress" <%= " selected" if task.state == "in_progress" %>>In Progress</option>
+              <option value="expired" <%= " selected" if task.state == "expired" %>>Expired</option>
+            </select>
+          <input type="submit" value="Create">
+        </form>
       </div>
     <% end %>
   <% else %>

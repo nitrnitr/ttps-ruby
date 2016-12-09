@@ -18,17 +18,6 @@ class ListsController < ApplicationController
     end
   end
 
-  def create_task
-    task = Task.new task_params
-    task.percentage = 0
-    task.list = @list
-    if task.valid?
-      task.save
-      redirect_to root_path
-    else
-    end
-  end
-
   def show
     @task = Task.new
   end
@@ -49,9 +38,5 @@ class ListsController < ApplicationController
 
   def list_params
     params.require(:list).permit(:title)
-  end
-
-  def task_params
-    params.require(:task).permit(:title, :description, :priority, :percentage, :type, :start_date, :end_date)
   end
 end
