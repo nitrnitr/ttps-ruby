@@ -117,8 +117,8 @@
               <option value="high" <%= " selected" if task.priority == 'high' %>>High</option>
             </select>
             <% if task.type == 'TempTask' %>
-              <input type="date" name="task[start_date]">
-              <input type="date" name="task[end_date]">
+              <input type="date" name="task[start_date]" value="<%= task.start_date %>">
+              <input type="date" name="task[end_date]" value="<%= task.end_date %>">
             <% end %>
             <% if task.type == 'LongTask' %>
               <select name="task[percentage]">

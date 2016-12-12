@@ -9046,3 +9046,979 @@ Processing by ListsController#show as HTML
 Completed 200 OK in 43ms (Views: 36.3ms | ActiveRecord: 1.1ms)
 
 
+Started GET "/lists/qwqrw" for ::1 at 2016-12-12 01:23:29 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"qwqrw"}
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "qwqrw"], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = $1 AND "tasks"."priority" = $2[0m  [["list_id", 3], ["priority", "high"]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = $1 AND "tasks"."priority" = $2[0m  [["list_id", 3], ["priority", "medium"]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = $1 AND "tasks"."priority" = $2[0m  [["list_id", 3], ["priority", "low"]]
+  Rendering lists/show.html.erb within layouts/application
+  Rendered lists/show.html.erb within layouts/application (54.0ms)
+Completed 200 OK in 405ms (Views: 302.2ms | ActiveRecord: 7.4ms)
+
+
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", ""]]
+  [1m[36mList Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "asdf"]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "asdf"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481516815"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481516815"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (2.8ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481516815"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Load (19.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (12.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (193.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "todos_development"[0m
+  [1m[35m (215.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "todos_test"[0m
+  [1m[35m (501.8ms)[0m  [1m[35mCREATE DATABASE "todos_development" ENCODING = 'unicode'[0m
+  [1m[35m (413.3ms)[0m  [1m[35mCREATE DATABASE "todos_test" ENCODING = 'unicode'[0m
+  [1m[35m (8.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5286629289131009610);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateTasks (20161207013709)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (21.8ms)[0m  [1m[35mCREATE TABLE "tasks" ("id" serial primary key, "type" character varying NOT NULL, "description" character varying NOT NULL, "priority" character varying NOT NULL, "state" character varying NOT NULL, "start_date" date, "end_date" date, "percentage" integer, "list_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX  "index_tasks_on_list_id" ON "tasks"  ("list_id")[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161207013709"]]
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateLists (20161207033049)
+  [1m[35m (6.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.5ms)[0m  [1m[35mCREATE TABLE "lists" ("id" serial primary key, "title" character varying NOT NULL, "slug" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161207033049"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2016-12-12 22:13:42 UTC], ["updated_at", 2016-12-12 22:13:42 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5286629289131009610)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'lists'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'tasks'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "lista-0"]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "Lista 0"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35mSQL (12.9ms)[0m  [1m[32mINSERT INTO "lists" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "Lista 0"], ["created_at", 2016-12-12 22:13:42 UTC], ["updated_at", 2016-12-12 22:13:42 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (194.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "todos_development"[0m
+  [1m[35m (187.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "todos_test"[0m
+  [1m[35m (392.9ms)[0m  [1m[35mCREATE DATABASE "todos_development" ENCODING = 'unicode'[0m
+  [1m[35m (398.1ms)[0m  [1m[35mCREATE DATABASE "todos_test" ENCODING = 'unicode'[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5286629289131009610);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateTasks (20161207013709)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "tasks" ("id" serial primary key, "type" character varying NOT NULL, "description" character varying NOT NULL, "priority" character varying NOT NULL, "state" character varying NOT NULL, "start_date" date, "end_date" date, "percentage" integer, "list_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_tasks_on_list_id" ON "tasks"  ("list_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161207013709"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateLists (20161207033049)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "lists" ("id" serial primary key, "title" character varying NOT NULL, "slug" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161207033049"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2016-12-12 22:14:13 UTC], ["updated_at", 2016-12-12 22:14:13 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(5286629289131009610)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'lists'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (4.1ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'tasks'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "lista-0"]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "Lista 0"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "lista-0"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "lists" ("title", "slug", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Lista 0"], ["slug", "lista-0"], ["created_at", 2016-12-12 22:14:13 UTC], ["updated_at", 2016-12-12 22:14:13 UTC]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "tasks" ("type", "description", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["type", "SimpleTask"], ["description", "Simple Task numero: 0"], ["list_id", 1], ["created_at", 2016-12-12 22:14:13 UTC], ["updated_at", 2016-12-12 22:14:13 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (184.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "todos_development"[0m
+  [1m[35m (192.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "todos_test"[0m
+  [1m[35m (397.3ms)[0m  [1m[35mCREATE DATABASE "todos_development" ENCODING = 'unicode'[0m
+  [1m[35m (386.8ms)[0m  [1m[35mCREATE DATABASE "todos_test" ENCODING = 'unicode'[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5286629289131009610);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateTasks (20161207013709)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "tasks" ("id" serial primary key, "type" character varying NOT NULL, "description" character varying NOT NULL, "priority" character varying NOT NULL, "state" character varying NOT NULL, "start_date" date, "end_date" date, "percentage" integer, "list_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_tasks_on_list_id" ON "tasks"  ("list_id")[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161207013709"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateLists (20161207033049)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "lists" ("id" serial primary key, "title" character varying NOT NULL, "slug" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161207033049"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2016-12-12 22:14:46 UTC], ["updated_at", 2016-12-12 22:14:46 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5286629289131009610)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'lists'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (9.5ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'tasks'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "lista-0"]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "Lista 0"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "lista-0"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "lists" ("title", "slug", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Lista 0"], ["slug", "lista-0"], ["created_at", 2016-12-12 22:14:47 UTC], ["updated_at", 2016-12-12 22:14:47 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "tasks" ("type", "description", "priority", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["type", "SimpleTask"], ["description", "Simple Task numero: 0"], ["priority", "high"], ["list_id", 1], ["created_at", 2016-12-12 22:14:47 UTC], ["updated_at", 2016-12-12 22:14:47 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (185.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "todos_development"[0m
+  [1m[35m (189.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "todos_test"[0m
+  [1m[35m (403.1ms)[0m  [1m[35mCREATE DATABASE "todos_development" ENCODING = 'unicode'[0m
+  [1m[35m (390.0ms)[0m  [1m[35mCREATE DATABASE "todos_test" ENCODING = 'unicode'[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5286629289131009610);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateTasks (20161207013709)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "tasks" ("id" serial primary key, "type" character varying NOT NULL, "description" character varying NOT NULL, "priority" character varying NOT NULL, "state" character varying NOT NULL, "start_date" date, "end_date" date, "percentage" integer, "list_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE  INDEX  "index_tasks_on_list_id" ON "tasks"  ("list_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161207013709"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateLists (20161207033049)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "lists" ("id" serial primary key, "title" character varying NOT NULL, "slug" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161207033049"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2016-12-12 22:15:35 UTC], ["updated_at", 2016-12-12 22:15:35 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5286629289131009610)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'lists'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'tasks'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "lista-0"]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "Lista 0"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "lista-0"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "lists" ("title", "slug", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Lista 0"], ["slug", "lista-0"], ["created_at", 2016-12-12 22:15:35 UTC], ["updated_at", 2016-12-12 22:15:35 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "tasks" ("type", "description", "priority", "state", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "SimpleTask"], ["description", "Simple Task numero: 0"], ["priority", "high"], ["state", "pending"], ["list_id", 1], ["created_at", 2016-12-12 22:15:35 UTC], ["updated_at", 2016-12-12 22:15:35 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("type", "description", "priority", "state", "start_date", "end_date", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["type", "TempTask"], ["description", "TempTask numero: 0"], ["priority", "medium"], ["state", "pending"], ["start_date", Sat, 10 Dec 2016], ["end_date", Sat, 21 Jan 2017], ["list_id", 1], ["created_at", 2016-12-12 22:15:35 UTC], ["updated_at", 2016-12-12 22:15:35 UTC]]
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("type", "description", "priority", "state", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "SimpleTask"], ["description", "Simple Task numero: 1"], ["priority", "high"], ["state", "pending"], ["list_id", 1], ["created_at", 2016-12-12 22:15:35 UTC], ["updated_at", 2016-12-12 22:15:35 UTC]]
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("type", "description", "priority", "state", "start_date", "end_date", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["type", "TempTask"], ["description", "TempTask numero: 1"], ["priority", "medium"], ["state", "pending"], ["start_date", Sat, 10 Dec 2016], ["end_date", Sat, 21 Jan 2017], ["list_id", 1], ["created_at", 2016-12-12 22:15:35 UTC], ["updated_at", 2016-12-12 22:15:35 UTC]]
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("type", "description", "priority", "state", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "SimpleTask"], ["description", "Simple Task numero: 2"], ["priority", "high"], ["state", "pending"], ["list_id", 1], ["created_at", 2016-12-12 22:15:35 UTC], ["updated_at", 2016-12-12 22:15:35 UTC]]
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("type", "description", "priority", "state", "start_date", "end_date", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["type", "TempTask"], ["description", "TempTask numero: 2"], ["priority", "medium"], ["state", "pending"], ["start_date", Sat, 10 Dec 2016], ["end_date", Sat, 21 Jan 2017], ["list_id", 1], ["created_at", 2016-12-12 22:15:35 UTC], ["updated_at", 2016-12-12 22:15:35 UTC]]
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (190.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "todos_development"[0m
+  [1m[35m (189.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "todos_test"[0m
+  [1m[35m (404.8ms)[0m  [1m[35mCREATE DATABASE "todos_development" ENCODING = 'unicode'[0m
+  [1m[35m (391.6ms)[0m  [1m[35mCREATE DATABASE "todos_test" ENCODING = 'unicode'[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5286629289131009610);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateTasks (20161207013709)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "tasks" ("id" serial primary key, "type" character varying NOT NULL, "description" character varying NOT NULL, "priority" character varying NOT NULL, "state" character varying NOT NULL, "start_date" date, "end_date" date, "percentage" integer, "list_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_tasks_on_list_id" ON "tasks"  ("list_id")[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161207013709"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateLists (20161207033049)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "lists" ("id" serial primary key, "title" character varying NOT NULL, "slug" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161207033049"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2016-12-12 22:17:49 UTC], ["updated_at", 2016-12-12 22:17:49 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5286629289131009610)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (4.4ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'lists'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'tasks'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "lista-0"]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "Lista 0"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "lista-0"], ["LIMIT", 1]]
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "lists" ("title", "slug", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Lista 0"], ["slug", "lista-0"], ["created_at", 2016-12-12 22:17:50 UTC], ["updated_at", 2016-12-12 22:17:50 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "tasks" ("type", "description", "priority", "state", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "SimpleTask"], ["description", "Simple Task numero: 0"], ["priority", "high"], ["state", "pending"], ["list_id", 1], ["created_at", 2016-12-12 22:17:50 UTC], ["updated_at", 2016-12-12 22:17:50 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "tasks" ("type", "description", "priority", "state", "start_date", "end_date", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["type", "TempTask"], ["description", "TempTask numero: 0"], ["priority", "medium"], ["state", "pending"], ["start_date", Sat, 10 Dec 2016], ["end_date", Sat, 21 Jan 2017], ["list_id", 1], ["created_at", 2016-12-12 22:17:50 UTC], ["updated_at", 2016-12-12 22:17:50 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("type", "description", "priority", "state", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "SimpleTask"], ["description", "Simple Task numero: 1"], ["priority", "high"], ["state", "pending"], ["list_id", 1], ["created_at", 2016-12-12 22:17:50 UTC], ["updated_at", 2016-12-12 22:17:50 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("type", "description", "priority", "state", "start_date", "end_date", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["type", "TempTask"], ["description", "TempTask numero: 1"], ["priority", "medium"], ["state", "pending"], ["start_date", Sat, 10 Dec 2016], ["end_date", Sat, 21 Jan 2017], ["list_id", 1], ["created_at", 2016-12-12 22:17:50 UTC], ["updated_at", 2016-12-12 22:17:50 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("type", "description", "priority", "state", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "SimpleTask"], ["description", "Simple Task numero: 2"], ["priority", "high"], ["state", "pending"], ["list_id", 1], ["created_at", 2016-12-12 22:17:50 UTC], ["updated_at", 2016-12-12 22:17:50 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("type", "description", "priority", "state", "start_date", "end_date", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["type", "TempTask"], ["description", "TempTask numero: 2"], ["priority", "medium"], ["state", "pending"], ["start_date", Sat, 10 Dec 2016], ["end_date", Sat, 21 Jan 2017], ["list_id", 1], ["created_at", 2016-12-12 22:17:50 UTC], ["updated_at", 2016-12-12 22:17:50 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (194.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "todos_development"[0m
+  [1m[35m (189.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "todos_test"[0m
+  [1m[35m (391.4ms)[0m  [1m[35mCREATE DATABASE "todos_development" ENCODING = 'unicode'[0m
+  [1m[35m (387.7ms)[0m  [1m[35mCREATE DATABASE "todos_test" ENCODING = 'unicode'[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5286629289131009610);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateTasks (20161207013709)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (11.9ms)[0m  [1m[35mCREATE TABLE "tasks" ("id" serial primary key, "type" character varying NOT NULL, "description" character varying NOT NULL, "priority" character varying NOT NULL, "state" character varying NOT NULL, "start_date" date, "end_date" date, "percentage" integer, "list_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_tasks_on_list_id" ON "tasks"  ("list_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161207013709"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateLists (20161207033049)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "lists" ("id" serial primary key, "title" character varying NOT NULL, "slug" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161207033049"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2016-12-12 22:19:02 UTC], ["updated_at", 2016-12-12 22:19:02 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(5286629289131009610)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'lists'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'tasks'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "lista-0"]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "Lista 0"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "lista-0"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "lists" ("title", "slug", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Lista 0"], ["slug", "lista-0"], ["created_at", 2016-12-12 22:19:02 UTC], ["updated_at", 2016-12-12 22:19:02 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "tasks" ("type", "description", "priority", "state", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "SimpleTask"], ["description", "Simple Task numero: 0"], ["priority", "high"], ["state", "pending"], ["list_id", 1], ["created_at", 2016-12-12 22:19:02 UTC], ["updated_at", 2016-12-12 22:19:02 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "tasks" ("type", "description", "priority", "state", "start_date", "end_date", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["type", "TempTask"], ["description", "TempTask numero: 0"], ["priority", "medium"], ["state", "pending"], ["start_date", Sat, 10 Dec 2016], ["end_date", Sat, 21 Jan 2017], ["list_id", 1], ["created_at", 2016-12-12 22:19:02 UTC], ["updated_at", 2016-12-12 22:19:02 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("type", "description", "priority", "state", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "SimpleTask"], ["description", "Simple Task numero: 1"], ["priority", "high"], ["state", "pending"], ["list_id", 1], ["created_at", 2016-12-12 22:19:02 UTC], ["updated_at", 2016-12-12 22:19:02 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("type", "description", "priority", "state", "start_date", "end_date", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["type", "TempTask"], ["description", "TempTask numero: 1"], ["priority", "medium"], ["state", "pending"], ["start_date", Sat, 10 Dec 2016], ["end_date", Sat, 21 Jan 2017], ["list_id", 1], ["created_at", 2016-12-12 22:19:02 UTC], ["updated_at", 2016-12-12 22:19:02 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("type", "description", "priority", "state", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "SimpleTask"], ["description", "Simple Task numero: 2"], ["priority", "high"], ["state", "pending"], ["list_id", 1], ["created_at", 2016-12-12 22:19:02 UTC], ["updated_at", 2016-12-12 22:19:02 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("type", "description", "priority", "state", "start_date", "end_date", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["type", "TempTask"], ["description", "TempTask numero: 2"], ["priority", "medium"], ["state", "pending"], ["start_date", Sat, 10 Dec 2016], ["end_date", Sat, 21 Jan 2017], ["list_id", 1], ["created_at", 2016-12-12 22:19:02 UTC], ["updated_at", 2016-12-12 22:19:02 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2016-12-12 19:19:10 -0300
+Processing by ListsController#index as HTML
+  [1m[36mList Load (0.5ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" IN (3, 4)[0m
+Completed 404 Not Found in 250ms (ActiveRecord: 10.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find all Lists with 'id': (3, 4) (found 0 results, but was looking for 2)):
+  
+app/controllers/lists_controller.rb:6:in `index'
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.4ms)
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (74.8ms)
+Started GET "/" for ::1 at 2016-12-12 19:19:13 -0300
+Processing by ListsController#index as HTML
+  Rendering lists/index.html.erb within layouts/application
+  Rendered lists/index.html.erb within layouts/application (60.9ms)
+Completed 200 OK in 534ms (Views: 527.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/lists" for ::1 at 2016-12-12 19:19:17 -0300
+Processing by ListsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QXqSeha3v30EDLovOpPrdriBTTkvpPTZZZFQteS9OSmPo6dfVAgkCx3jrMVR7w0Fa+KLySo/kNFP5H3lE/h2iQ==", "list"=>{"title"=>"qrw"}, "commit"=>"Create List"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "qrw"]]
+  [1m[36mList Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "qrw"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35mSQL (6.3ms)[0m  [1m[32mINSERT INTO "lists" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "qrw"], ["created_at", 2016-12-12 22:19:17 UTC], ["updated_at", 2016-12-12 22:19:17 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 10.0ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::NotNullViolation: ERROR:  null value in column "slug" violates not-null constraint
+DETAIL:  Failing row contains (2, qrw, null, 2016-12-12 22:19:17.368011, 2016-12-12 22:19:17.368011).
+: INSERT INTO "lists" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"):
+  
+app/controllers/lists_controller.rb:13:in `create'
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.5ms)
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (54.7ms)
+Started POST "/lists" for ::1 at 2016-12-12 19:20:54 -0300
+Processing by ListsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QXqSeha3v30EDLovOpPrdriBTTkvpPTZZZFQteS9OSmPo6dfVAgkCx3jrMVR7w0Fa+KLySo/kNFP5H3lE/h2iQ==", "list"=>{"title"=>"qrw"}, "commit"=>"Create List"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "qrw"]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "qrw"]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "qrw"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35mSQL (1.9ms)[0m  [1m[32mINSERT INTO "lists" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "qrw"], ["created_at", 2016-12-12 22:20:54 UTC], ["updated_at", 2016-12-12 22:20:54 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 3.1ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::NotNullViolation: ERROR:  null value in column "slug" violates not-null constraint
+DETAIL:  Failing row contains (3, qrw, null, 2016-12-12 22:20:54.437805, 2016-12-12 22:20:54.437805).
+: INSERT INTO "lists" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"):
+  
+app/controllers/lists_controller.rb:13:in `create'
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.7ms)
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (52.7ms)
+Started POST "/lists" for ::1 at 2016-12-12 19:21:07 -0300
+Processing by ListsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QXqSeha3v30EDLovOpPrdriBTTkvpPTZZZFQteS9OSmPo6dfVAgkCx3jrMVR7w0Fa+KLySo/kNFP5H3lE/h2iQ==", "list"=>{"title"=>"qrw"}, "commit"=>"Create List"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "qrw"]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "qrw"]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "qrw"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "lists" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "qrw"], ["created_at", 2016-12-12 22:21:07 UTC], ["updated_at", 2016-12-12 22:21:07 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 2.0ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::NotNullViolation: ERROR:  null value in column "slug" violates not-null constraint
+DETAIL:  Failing row contains (4, qrw, null, 2016-12-12 22:21:07.398285, 2016-12-12 22:21:07.398285).
+: INSERT INTO "lists" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"):
+  
+app/controllers/lists_controller.rb:13:in `create'
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.6ms)
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (50.8ms)
+Started POST "/lists" for ::1 at 2016-12-12 19:21:31 -0300
+Processing by ListsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QXqSeha3v30EDLovOpPrdriBTTkvpPTZZZFQteS9OSmPo6dfVAgkCx3jrMVR7w0Fa+KLySo/kNFP5H3lE/h2iQ==", "list"=>{"title"=>"qrw"}, "commit"=>"Create List"}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "qrw"]]
+Started POST "/lists" for ::1 at 2016-12-12 19:22:04 -0300
+Processing by ListsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QXqSeha3v30EDLovOpPrdriBTTkvpPTZZZFQteS9OSmPo6dfVAgkCx3jrMVR7w0Fa+KLySo/kNFP5H3lE/h2iQ==", "list"=>{"title"=>"qrw"}, "commit"=>"Create List"}
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "qrw"]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "qrw"]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "qrw"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "qrw"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "lists" ("title", "slug", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "qrw"], ["slug", "qrw"], ["created_at", 2016-12-12 22:22:04 UTC], ["updated_at", 2016-12-12 22:22:04 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/lists/qrw
+Completed 302 Found in 291ms (ActiveRecord: 16.3ms)
+
+
+Started GET "/lists/qrw" for ::1 at 2016-12-12 19:22:04 -0300
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"qrw"}
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "qrw"], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = $1 AND "tasks"."priority" = $2[0m  [["list_id", 5], ["priority", "high"]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = $1 AND "tasks"."priority" = $2[0m  [["list_id", 5], ["priority", "medium"]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = $1 AND "tasks"."priority" = $2[0m  [["list_id", 5], ["priority", "low"]]
+  Rendering lists/show.html.erb within layouts/application
+  Rendered lists/show.html.erb within layouts/application (64.7ms)
+Completed 200 OK in 553ms (Views: 500.5ms | ActiveRecord: 4.7ms)
+
+
+Started POST "/lists" for ::1 at 2016-12-12 19:22:10 -0300
+Processing by ListsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QXqSeha3v30EDLovOpPrdriBTTkvpPTZZZFQteS9OSmPo6dfVAgkCx3jrMVR7w0Fa+KLySo/kNFP5H3lE/h2iQ==", "list"=>{"title"=>"qrw"}, "commit"=>"Create List"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "qrw"]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "qrw"]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "qrw"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "qrw1481581330"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2016-12-12 19:22:10 -0300
+Processing by ListsController#index as HTML
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering lists/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."list_id" = $1[0m  [["list_id", 5]]
+  Rendered lists/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 46ms (Views: 42.7ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/lists" for ::1 at 2016-12-12 19:22:16 -0300
+Processing by ListsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vwUdh8yrJrmBUFsN6xVwQ8DmyGa+A/cVrXrfKjAAmJ1x3CiijhS9z5i/TeeAaZYwE4UOlruYkx2HD/J6x0XXPQ==", "list"=>{"title"=>"qrw"}, "commit"=>"Create List"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "qrw"]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE (2.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "qrw"]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "qrw"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "qrw1481581336"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/" for ::1 at 2016-12-12 19:22:16 -0300
+Processing by ListsController#index as HTML
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering lists/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."list_id" = $1[0m  [["list_id", 5]]
+  Rendered lists/index.html.erb within layouts/application (24.7ms)
+Completed 200 OK in 76ms (Views: 72.5ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/lists" for ::1 at 2016-12-12 19:22:36 -0300
+Processing by ListsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4i0cWpb20mNaQ0dz8f9ty1nEEnAeX7p3LEGaT9Q7Vvgs9Cl/1ElJFUOsUZmag4u4iqfUgBvE3n8GNLcfI34ZWA==", "list"=>{"title"=>"qrw"}, "commit"=>"Create List"}
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "qrw"]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "qrw"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "qrw1481581360"], ["LIMIT", 1]]
+  [1m[35m (8.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "qrw"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "qrw"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "qrw1481581385"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 28975ms (ActiveRecord: 15.4ms)
+
+
+Started GET "/" for ::1 at 2016-12-12 19:23:05 -0300
+Processing by ListsController#index as HTML
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering lists/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."list_id" = $1[0m  [["list_id", 5]]
+  Rendered lists/index.html.erb within layouts/application (20.6ms)
+Completed 200 OK in 87ms (Views: 80.3ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/lists" for ::1 at 2016-12-12 19:23:10 -0300
+Processing by ListsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3Z/1aWCmbUBjPjfz47nRSmJChcUVKdMsNU19r5Vi7EoTRsBMIhn2NnrRIRmIxTc5sSFDNRCytyQfOFD/Yiej6g==", "list"=>{"title"=>"qrw"}, "commit"=>"Create List"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "qrw"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "qrw1481581390"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "lists" ("title", "slug", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "qrw"], ["slug", "qrw1481581390"], ["created_at", 2016-12-12 22:23:10 UTC], ["updated_at", 2016-12-12 22:23:10 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/lists/qrw1481581390
+Completed 302 Found in 20ms (ActiveRecord: 5.5ms)
+
+
+Started GET "/lists/qrw1481581390" for ::1 at 2016-12-12 19:23:10 -0300
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"qrw1481581390"}
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "qrw1481581390"], ["LIMIT", 1]]
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = $1 AND "tasks"."priority" = $2[0m  [["list_id", 6], ["priority", "high"]]
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = $1 AND "tasks"."priority" = $2[0m  [["list_id", 6], ["priority", "medium"]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = $1 AND "tasks"."priority" = $2[0m  [["list_id", 6], ["priority", "low"]]
+  Rendering lists/show.html.erb within layouts/application
+  Rendered lists/show.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 79ms (Views: 48.1ms | ActiveRecord: 9.3ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (192.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "todos_development"[0m
+  [1m[35m (195.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "todos_test"[0m
+  [1m[35m (382.9ms)[0m  [1m[35mCREATE DATABASE "todos_development" ENCODING = 'unicode'[0m
+  [1m[35m (393.9ms)[0m  [1m[35mCREATE DATABASE "todos_test" ENCODING = 'unicode'[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5286629289131009610);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateTasks (20161207013709)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE "tasks" ("id" serial primary key, "type" character varying NOT NULL, "description" character varying NOT NULL, "priority" character varying NOT NULL, "state" character varying NOT NULL, "start_date" date, "end_date" date, "percentage" integer, "list_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX  "index_tasks_on_list_id" ON "tasks"  ("list_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161207013709"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateLists (20161207033049)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "lists" ("id" serial primary key, "title" character varying NOT NULL, "slug" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161207033049"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2016-12-12 22:29:10 UTC], ["updated_at", 2016-12-12 22:29:10 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5286629289131009610)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (3.9ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'lists'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'tasks'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (197.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "todos_development"[0m
+  [1m[35m (190.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "todos_test"[0m
+  [1m[35m (393.3ms)[0m  [1m[35mCREATE DATABASE "todos_development" ENCODING = 'unicode'[0m
+  [1m[35m (388.2ms)[0m  [1m[35mCREATE DATABASE "todos_test" ENCODING = 'unicode'[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5286629289131009610);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateTasks (20161207013709)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (10.2ms)[0m  [1m[35mCREATE TABLE "tasks" ("id" serial primary key, "type" character varying NOT NULL, "description" character varying NOT NULL, "priority" character varying NOT NULL, "state" character varying NOT NULL, "start_date" date, "end_date" date, "percentage" integer, "list_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE  INDEX  "index_tasks_on_list_id" ON "tasks"  ("list_id")[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161207013709"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateLists (20161207033049)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "lists" ("id" serial primary key, "title" character varying NOT NULL, "slug" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161207033049"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2016-12-12 22:29:16 UTC], ["updated_at", 2016-12-12 22:29:16 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5286629289131009610)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'lists'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'tasks'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "lista-0"]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "lista-0"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "lists" ("title", "slug", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Lista 0"], ["slug", "lista-0"], ["created_at", 2016-12-12 22:29:16 UTC], ["updated_at", 2016-12-12 22:29:16 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "tasks" ("type", "description", "priority", "state", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "SimpleTask"], ["description", "Simple Task numero: 0"], ["priority", "high"], ["state", "pending"], ["list_id", 1], ["created_at", 2016-12-12 22:29:16 UTC], ["updated_at", 2016-12-12 22:29:16 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("type", "description", "priority", "state", "start_date", "end_date", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["type", "TempTask"], ["description", "TempTask numero: 0"], ["priority", "medium"], ["state", "pending"], ["start_date", Sat, 10 Dec 2016], ["end_date", Sat, 21 Jan 2017], ["list_id", 1], ["created_at", 2016-12-12 22:29:16 UTC], ["updated_at", 2016-12-12 22:29:16 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("type", "description", "priority", "state", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "SimpleTask"], ["description", "Simple Task numero: 1"], ["priority", "high"], ["state", "pending"], ["list_id", 1], ["created_at", 2016-12-12 22:29:16 UTC], ["updated_at", 2016-12-12 22:29:16 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("type", "description", "priority", "state", "start_date", "end_date", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["type", "TempTask"], ["description", "TempTask numero: 1"], ["priority", "medium"], ["state", "pending"], ["start_date", Sat, 10 Dec 2016], ["end_date", Sat, 21 Jan 2017], ["list_id", 1], ["created_at", 2016-12-12 22:29:16 UTC], ["updated_at", 2016-12-12 22:29:16 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("type", "description", "priority", "state", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "SimpleTask"], ["description", "Simple Task numero: 2"], ["priority", "high"], ["state", "pending"], ["list_id", 1], ["created_at", 2016-12-12 22:29:16 UTC], ["updated_at", 2016-12-12 22:29:16 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("type", "description", "priority", "state", "start_date", "end_date", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["type", "TempTask"], ["description", "TempTask numero: 2"], ["priority", "medium"], ["state", "pending"], ["start_date", Sat, 10 Dec 2016], ["end_date", Sat, 21 Jan 2017], ["list_id", 1], ["created_at", 2016-12-12 22:29:16 UTC], ["updated_at", 2016-12-12 22:29:16 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2016-12-12 19:29:28 -0300
+Processing by ListsController#index as HTML
+  [1m[36mList Load (0.6ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" IN (5, 6)[0m
+Completed 404 Not Found in 258ms (ActiveRecord: 9.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find all Lists with 'id': (5, 6) (found 0 results, but was looking for 2)):
+  
+app/controllers/lists_controller.rb:6:in `index'
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.0ms)
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (64.8ms)
+Started GET "/" for ::1 at 2016-12-12 19:29:29 -0300
+Processing by ListsController#index as HTML
+  [1m[36mList Load (1.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" IN (5, 6)[0m
+Completed 404 Not Found in 4ms (ActiveRecord: 1.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find all Lists with 'id': (5, 6) (found 0 results, but was looking for 2)):
+  
+app/controllers/lists_controller.rb:6:in `index'
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.7ms)
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (50.7ms)
+Started GET "/" for ::1 at 2016-12-12 19:29:32 -0300
+Processing by ListsController#index as HTML
+  [1m[36mList Load (0.8ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" IN (5, 6)[0m
+Completed 404 Not Found in 4ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find all Lists with 'id': (5, 6) (found 0 results, but was looking for 2)):
+  
+app/controllers/lists_controller.rb:6:in `index'
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.5ms)
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.1ms)
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (57.3ms)
+Started GET "/" for ::1 at 2016-12-12 19:29:37 -0300
+Processing by ListsController#index as HTML
+  [1m[36mList Load (0.7ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" IN (5, 6)[0m
+Completed 404 Not Found in 5ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find all Lists with 'id': (5, 6) (found 0 results, but was looking for 2)):
+  
+app/controllers/lists_controller.rb:6:in `index'
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.8ms)
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (56.4ms)
+Started GET "/" for ::1 at 2016-12-12 19:29:46 -0300
+Processing by ListsController#index as HTML
+  Rendering lists/index.html.erb within layouts/application
+  Rendered lists/index.html.erb within layouts/application (90.6ms)
+Completed 200 OK in 1503ms (Views: 1495.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/lists" for ::1 at 2016-12-12 19:29:53 -0300
+Processing by ListsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WY/aqa9ha8ogEMjoyBZODKZtyp3ohOsSkMS8B9ojQLB9DLTiZKcFozCpFLr9mkuHvNfGflkQzMIlWS02XTl1oQ==", "list"=>{"title"=>"qwr"}, "commit"=>"Create List"}
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "qwr"]]
+  [1m[36mList Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "qwr"], ["LIMIT", 1]]
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "lists" ("title", "slug", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "qwr"], ["slug", "qwr"], ["created_at", 2016-12-12 22:29:53 UTC], ["updated_at", 2016-12-12 22:29:53 UTC]]
+  [1m[35m (9.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/lists/qwr
+Completed 302 Found in 46ms (ActiveRecord: 21.0ms)
+
+
+Started GET "/lists/qwr" for ::1 at 2016-12-12 19:29:53 -0300
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"qwr"}
+  [1m[36mList Load (6.0ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "qwr"], ["LIMIT", 1]]
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = $1 AND "tasks"."priority" = $2[0m  [["list_id", 2], ["priority", "high"]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = $1 AND "tasks"."priority" = $2[0m  [["list_id", 2], ["priority", "medium"]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = $1 AND "tasks"."priority" = $2[0m  [["list_id", 2], ["priority", "low"]]
+  Rendering lists/show.html.erb within layouts/application
+  Rendered lists/show.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 305ms (Views: 186.0ms | ActiveRecord: 14.4ms)
+
+
+Started POST "/lists" for ::1 at 2016-12-12 19:29:56 -0300
+Processing by ListsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WY/aqa9ha8ogEMjoyBZODKZtyp3ohOsSkMS8B9ojQLB9DLTiZKcFozCpFLr9mkuHvNfGflkQzMIlWS02XTl1oQ==", "list"=>{"title"=>"qwr"}, "commit"=>"Create List"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "qwr"]]
+  [1m[36mList Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "qwr1481581796"], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "lists" ("title", "slug", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "qwr"], ["slug", "qwr1481581796"], ["created_at", 2016-12-12 22:29:56 UTC], ["updated_at", 2016-12-12 22:29:56 UTC]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/lists/qwr1481581796
+Completed 302 Found in 13ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/lists/qwr1481581796" for ::1 at 2016-12-12 19:29:56 -0300
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"qwr1481581796"}
+  [1m[36mList Load (1.9ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "qwr1481581796"], ["LIMIT", 1]]
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = $1 AND "tasks"."priority" = $2[0m  [["list_id", 3], ["priority", "high"]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = $1 AND "tasks"."priority" = $2[0m  [["list_id", 3], ["priority", "medium"]]
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = $1 AND "tasks"."priority" = $2[0m  [["list_id", 3], ["priority", "low"]]
+  Rendering lists/show.html.erb within layouts/application
+  Rendered lists/show.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 77ms (Views: 65.9ms | ActiveRecord: 3.3ms)
+
+

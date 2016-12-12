@@ -18,11 +18,4 @@ scope do
     @list.title = 'asdf'
     assert @list.valid?
   end
-
-  test 'fails if slug is taken' do
-    List.create title: 'aaaa', slug: 'aaaa'
-    a = List.new title: 'aaaa'
-    a.update slug: 'aaaa'
-    assert !a.valid?
-  end
 end

@@ -9,7 +9,6 @@ class ListsController < ApplicationController
 
   def create
     @list = List.new(list_params)
-
     if @list.save
       current_browser_lists << @list.id
       redirect_to "/lists/#{@list.slug}", notice: 'List was successfully created.'
