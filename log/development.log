@@ -8233,3 +8233,816 @@ Processing by ListsController#index as HTML
 Completed 200 OK in 52ms (Views: 47.3ms | ActiveRecord: 2.2ms)
 
 
+Started GET "/" for ::1 at 2016-12-11 23:47:19 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (19.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ListsController#index as HTML
+  [1m[36mList Load (19.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" IN (3, 4)[0m
+  Rendering lists/index.html.erb within layouts/application
+  [1m[35m (19.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."list_id" = $1[0m  [["list_id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."list_id" = $1[0m  [["list_id", 4]]
+  Rendered lists/index.html.erb within layouts/application (104.5ms)
+Completed 200 OK in 618ms (Views: 514.8ms | ActiveRecord: 75.8ms)
+
+
+Started GET "/lists/qwqrw" for ::1 at 2016-12-11 23:47:22 -0300
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"qwqrw"}
+  [1m[36mList Load (4.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "qwqrw"], ["LIMIT", 1]]
+  Rendering lists/show.html.erb within layouts/application
+  Rendered lists/show.html.erb within layouts/application (76.4ms)
+Completed 500 Internal Server Error in 117ms (ActiveRecord: 5.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `tasks_path' for #<#<Class:0x007f99c135f388>:0x007f99c225d7b8>
+Did you mean?  asset_path):
+    58:   </div>
+    59:   <div class="box-body">
+    60:     New Simple Task
+    61:     <%= simple_form_for(@task) do |f| %>
+    62:       <%= f.input :description, required: true %>
+    63:       <%= f.input :priority, collection: ['low', 'medium', 'high'], required: true %>
+    64:       <%= f.button :submit, class: "btn btn-primary" %>
+  
+app/views/lists/show.html.erb:61:in `_app_views_lists_show_html_erb__244021888439934648_70149181993220'
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.0ms)
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (64.4ms)
+  [1m[36mList Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mList Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mList Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mList Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mList Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mList Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mList Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mList Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "rrrrr"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "rrrrr"]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", ""]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa"], ["LIMIT", 1]]
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "lists" ("title", "slug", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "aaaa"], ["slug", "aaaa"], ["created_at", 2016-12-12 03:45:51 UTC], ["updated_at", 2016-12-12 03:45:51 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", ""]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "asdf"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "asdf"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481514381"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481514381"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481514381"], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", ""]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "asdf"]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "asdf"], ["LIMIT", 1]]
+  [1m[36mList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481514620"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481514620"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481514620"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", ""]]
+  [1m[36mList Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mList Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "asdf"]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "asdf"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481514655"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481514655"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481514655"], ["LIMIT", 1]]
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", ""]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "asdf"]]
+  [1m[36mList Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "asdf"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481514671"], ["LIMIT", 1]]
+  [1m[35m (2.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481514671"], ["LIMIT", 1]]
+  [1m[35m (1.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481514671"], ["LIMIT", 1]]
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", ""]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mList Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "asdf"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "asdf"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481514681"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481514681"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481514681"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", ""]]
+  [1m[36mList Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mList Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "asdf"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "asdf"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481514732"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481514732"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481514732"], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", ""]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "asdf"]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "asdf"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481514756"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481514756"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481514756"], ["LIMIT", 1]]
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", ""]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "asdf"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "asdf"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481514922"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481514922"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481514922"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", ""]]
+  [1m[36mList Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "asdf"]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "asdf"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481514937"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481514937"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481514937"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", ""]]
+  [1m[36mList Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mList Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "asdf"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "asdf"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481514995"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481514995"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481514995"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", ""]]
+  [1m[36mList Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mList Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "asdf"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "asdf"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481515034"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481515034"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481515034"], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", ""]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "asdf"]]
+  [1m[36mList Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "asdf"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481515143"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481515143"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481515143"], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", ""]]
+  [1m[36mList Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "asdf"]]
+  [1m[36mList Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "asdf"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481515160"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481515160"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481515160"], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", ""]]
+  [1m[36mList Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "asdf"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "asdf"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481515211"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481515211"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481515211"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", ""]]
+  [1m[36mList Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mList Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "asdf"]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "asdf"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481515231"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481515231"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481515231"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", ""]]
+  [1m[36mList Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mList Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "asdf"]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "asdf"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481515402"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481515402"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481515402"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", ""]]
+  [1m[36mList Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mList Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "asdf"]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "asdf"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481515413"], ["LIMIT", 1]]
+  [1m[35m (2.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481515413"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481515413"], ["LIMIT", 1]]
+  [1m[36mTask Load (1.9ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" ORDER BY "tasks"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" ORDER BY "tasks"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" ORDER BY "tasks"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+Started GET "/" for ::1 at 2016-12-12 01:05:25 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ListsController#index as HTML
+  [1m[36mList Load (0.5ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" IN (3, 4)[0m
+  Rendering lists/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."list_id" = $1[0m  [["list_id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."list_id" = $1[0m  [["list_id", 4]]
+  Rendered lists/index.html.erb within layouts/application (91.0ms)
+Completed 200 OK in 477ms (Views: 442.1ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/lists/qwqrw" for ::1 at 2016-12-12 01:05:29 -0300
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"qwqrw"}
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "qwqrw"], ["LIMIT", 1]]
+  Rendering lists/show.html.erb within layouts/application
+  [1m[36mTask Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."list_id" = $1 LIMIT $2[0m  [["list_id", 3], ["LIMIT", 1]]
+  Rendered lists/show.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 131ms (Views: 57.7ms | ActiveRecord: 15.2ms)
+
+
+Started POST "/lists/qwqrw/tasks" for ::1 at 2016-12-12 01:05:40 -0300
+Processing by TasksController#create as HTML
+  Parameters: {"task"=>{"description"=>"qwrqrqw", "start_date"=>"2016-12-11", "end_date"=>"2016-12-21", "type"=>"TempTask", "priority"=>"low"}, "list_id"=>"qwqrw"}
+  [1m[36mList Load (1.1ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "qwqrw"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 1.1ms)
+
+
+  
+UncaughtThrowError (uncaught throw #<ActiveModel::Errors:0x007fcde3ce5de8 @base=#<TempTask id: nil, type: "TempTask", description: "qwrqrqw", priority: "low", state: "in_progress", start_date: "2016-12-11", end_date: "2016-12-21", percentage: nil, list_id: 3, created_at: nil, updated_at: nil>, @messages={:percentage=>["can't be blank", "is not a number"]}, @details={:percentage=>[{:error=>:blank}, {:error=>:not_a_number, :value=>nil}]}>):
+  
+app/controllers/tasks_controller.rb:16:in `throw'
+app/controllers/tasks_controller.rb:16:in `create'
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.6ms)
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (56.7ms)
+Started POST "/lists/qwqrw/tasks" for ::1 at 2016-12-12 01:06:17 -0300
+Processing by TasksController#create as HTML
+  Parameters: {"task"=>{"description"=>"qwrqrqw", "start_date"=>"2016-12-11", "end_date"=>"2016-12-21", "type"=>"TempTask", "priority"=>"low"}, "list_id"=>"qwqrw"}
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "qwqrw"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.3ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/models/task.rb:6:in `initialize'
+app/controllers/tasks_controller.rb:7:in `create'
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.9ms)
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (48.2ms)
+Started POST "/lists/qwqrw/tasks" for ::1 at 2016-12-12 01:06:30 -0300
+Processing by TasksController#create as HTML
+  Parameters: {"task"=>{"description"=>"qwrqrqw", "start_date"=>"2016-12-11", "end_date"=>"2016-12-21", "type"=>"TempTask", "priority"=>"low"}, "list_id"=>"qwqrw"}
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "qwqrw"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `state=' for #<TempTask not initialized>):
+  
+app/controllers/tasks_controller.rb:8:in `create'
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.2ms)
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (44.9ms)
+Started POST "/lists/qwqrw/tasks" for ::1 at 2016-12-12 01:06:57 -0300
+Processing by TasksController#create as HTML
+  Parameters: {"task"=>{"description"=>"qwrqrqw", "start_date"=>"2016-12-11", "end_date"=>"2016-12-21", "type"=>"TempTask", "priority"=>"low"}, "list_id"=>"qwqrw"}
+  [1m[36mList Load (0.6ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "qwqrw"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/lists/qwqrw
+Completed 302 Found in 32ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/lists/qwqrw" for ::1 at 2016-12-12 01:06:57 -0300
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"qwqrw"}
+  [1m[36mList Load (0.9ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "qwqrw"], ["LIMIT", 1]]
+  Rendering lists/show.html.erb within layouts/application
+  [1m[36mTask Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."list_id" = $1 LIMIT $2[0m  [["list_id", 3], ["LIMIT", 1]]
+  Rendered lists/show.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 44ms (Views: 38.6ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/lists/qwqrw/tasks" for ::1 at 2016-12-12 01:07:06 -0300
+Processing by TasksController#create as HTML
+  Parameters: {"task"=>{"description"=>"wwqrrq", "start_date"=>"2016-12-28", "end_date"=>"2016-12-29", "type"=>"TempTask", "priority"=>"low"}, "list_id"=>"qwqrw"}
+  [1m[36mList Load (1.1ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "qwqrw"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/lists/qwqrw
+Completed 302 Found in 6ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/lists/qwqrw" for ::1 at 2016-12-12 01:07:06 -0300
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"qwqrw"}
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "qwqrw"], ["LIMIT", 1]]
+  Rendering lists/show.html.erb within layouts/application
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."list_id" = $1 LIMIT $2[0m  [["list_id", 3], ["LIMIT", 1]]
+  Rendered lists/show.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 41ms (Views: 37.9ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/lists/qwqrw/tasks" for ::1 at 2016-12-12 01:07:37 -0300
+Processing by TasksController#create as HTML
+  Parameters: {"task"=>{"description"=>"qwrqwr", "start_date"=>"2016-12-19", "end_date"=>"2016-12-28", "type"=>"TempTask", "priority"=>"low"}, "list_id"=>"qwqrw"}
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "qwqrw"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.3ms)
+
+
+  
+UncaughtThrowError (uncaught throw #<ActiveModel::Errors:0x007fcde7cc2678 @base=#<TempTask id: nil, type: "TempTask", description: "qwrqwr", priority: "low", state: "in_progress", start_date: "2016-12-19", end_date: "2016-12-28", percentage: nil, list_id: 3, created_at: nil, updated_at: nil>, @messages={:percentage=>["can't be blank", "is not a number"]}, @details={:percentage=>[{:error=>:blank}, {:error=>:not_a_number, :value=>nil}]}>):
+  
+app/controllers/tasks_controller.rb:16:in `throw'
+app/controllers/tasks_controller.rb:16:in `create'
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.8ms)
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (45.2ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", ""]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "asdf"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "asdf"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481515831"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481515831"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481515831"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", ""]]
+  [1m[36mList Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "asdf"]]
+  [1m[36mList Exists (2.7ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "asdf"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481515851"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481515851"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481515851"], ["LIMIT", 1]]
+Started GET "/" for ::1 at 2016-12-12 01:11:08 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ListsController#index as HTML
+  [1m[36mList Load (0.5ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" IN (3, 4)[0m
+  Rendering lists/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."list_id" = $1[0m  [["list_id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."list_id" = $1[0m  [["list_id", 4]]
+  Rendered lists/index.html.erb within layouts/application (73.7ms)
+Completed 200 OK in 366ms (Views: 336.7ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/lists/qwqrw" for ::1 at 2016-12-12 01:11:11 -0300
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"qwqrw"}
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "qwqrw"], ["LIMIT", 1]]
+  Rendering lists/show.html.erb within layouts/application
+  [1m[36mTask Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."list_id" = $1 LIMIT $2[0m  [["list_id", 3], ["LIMIT", 1]]
+  Rendered lists/show.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 132ms (Views: 79.9ms | ActiveRecord: 6.0ms)
+
+
+Started POST "/lists/qwqrw/tasks" for ::1 at 2016-12-12 01:11:18 -0300
+Processing by TasksController#create as HTML
+  Parameters: {"task"=>{"description"=>"qwrrqw", "start_date"=>"2016-12-27", "end_date"=>"2016-12-29", "type"=>"TempTask", "priority"=>"low"}, "list_id"=>"qwqrw"}
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "qwqrw"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "tasks" ("type", "description", "priority", "state", "start_date", "end_date", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["type", "TempTask"], ["description", "qwrrqw"], ["priority", "low"], ["state", "in_progress"], ["start_date", Tue, 27 Dec 2016], ["end_date", Thu, 29 Dec 2016], ["list_id", 3], ["created_at", 2016-12-12 04:11:18 UTC], ["updated_at", 2016-12-12 04:11:18 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/lists/qwqrw
+Completed 302 Found in 22ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/lists/qwqrw" for ::1 at 2016-12-12 01:11:18 -0300
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"qwqrw"}
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "qwqrw"], ["LIMIT", 1]]
+  Rendering lists/show.html.erb within layouts/application
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."list_id" = $1 LIMIT $2[0m  [["list_id", 3], ["LIMIT", 1]]
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = $1[0m  [["list_id", 3]]
+  Rendered lists/show.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 54ms (Views: 51.0ms | ActiveRecord: 0.7ms)
+
+
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", ""]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mList Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "asdf"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "asdf"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481516058"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481516058"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481516058"], ["LIMIT", 1]]
+  [1m[35m (17.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", ""]]
+  [1m[36mList Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "asdf"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "asdf"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481516071"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481516071"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481516071"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", ""]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "asdf"]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "asdf"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481516099"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481516099"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."slug" = $1[0m  [["slug", "aaaa"]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."title" = $1 LIMIT $2[0m  [["title", "aaaa"], ["LIMIT", 1]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "aaaa1481516099"], ["LIMIT", 1]]
+Started GET "/lists/qwqrw" for ::1 at 2016-12-12 01:16:54 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"qwqrw"}
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "qwqrw"], ["LIMIT", 1]]
+  Rendering lists/show.html.erb within layouts/application
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."list_id" = $1 LIMIT $2[0m  [["list_id", 3], ["LIMIT", 1]]
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = $1[0m  [["list_id", 3]]
+  Rendered lists/show.html.erb within layouts/application (91.1ms)
+Completed 200 OK in 391ms (Views: 345.1ms | ActiveRecord: 7.1ms)
+
+
+Started POST "/lists/qwqrw/tasks" for ::1 at 2016-12-12 01:17:00 -0300
+Processing by TasksController#create as HTML
+  Parameters: {"task"=>{"description"=>"qwr", "type"=>"LongTask", "priority"=>"medium"}, "list_id"=>"qwqrw"}
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "qwqrw"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("type", "description", "priority", "state", "percentage", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["type", "LongTask"], ["description", "qwr"], ["priority", "medium"], ["state", "in_progress"], ["percentage", 0], ["list_id", 3], ["created_at", 2016-12-12 04:17:00 UTC], ["updated_at", 2016-12-12 04:17:00 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/lists/qwqrw
+Completed 302 Found in 17ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/lists/qwqrw" for ::1 at 2016-12-12 01:17:00 -0300
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"qwqrw"}
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "qwqrw"], ["LIMIT", 1]]
+  Rendering lists/show.html.erb within layouts/application
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."list_id" = $1 LIMIT $2[0m  [["list_id", 3], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = $1[0m  [["list_id", 3]]
+  Rendered lists/show.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 71ms (Views: 67.9ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/lists/qwqrw/tasks" for ::1 at 2016-12-12 01:17:08 -0300
+Processing by TasksController#create as HTML
+  Parameters: {"task"=>{"description"=>"qwrrqww", "type"=>"SimpleTask", "priority"=>"high"}, "list_id"=>"qwqrw"}
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "qwqrw"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("type", "description", "priority", "state", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "SimpleTask"], ["description", "qwrrqww"], ["priority", "high"], ["state", "in_progress"], ["list_id", 3], ["created_at", 2016-12-12 04:17:08 UTC], ["updated_at", 2016-12-12 04:17:08 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/lists/qwqrw
+Completed 302 Found in 17ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/lists/qwqrw" for ::1 at 2016-12-12 01:17:08 -0300
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"qwqrw"}
+  [1m[36mList Load (0.5ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "qwqrw"], ["LIMIT", 1]]
+  Rendering lists/show.html.erb within layouts/application
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."list_id" = $1 LIMIT $2[0m  [["list_id", 3], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = $1[0m  [["list_id", 3]]
+  Rendered lists/show.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 60ms (Views: 55.1ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/lists/qwqrw/tasks" for ::1 at 2016-12-12 01:17:10 -0300
+Processing by TasksController#create as HTML
+  Parameters: {"task"=>{"description"=>"qwrrwqrwq", "type"=>"SimpleTask", "priority"=>"low"}, "list_id"=>"qwqrw"}
+  [1m[36mList Load (0.5ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "qwqrw"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("type", "description", "priority", "state", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "SimpleTask"], ["description", "qwrrwqrwq"], ["priority", "low"], ["state", "in_progress"], ["list_id", 3], ["created_at", 2016-12-12 04:17:10 UTC], ["updated_at", 2016-12-12 04:17:10 UTC]]
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/lists/qwqrw
+Completed 302 Found in 14ms (ActiveRecord: 7.0ms)
+
+
+Started GET "/lists/qwqrw" for ::1 at 2016-12-12 01:17:10 -0300
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"qwqrw"}
+  [1m[36mList Load (0.6ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "qwqrw"], ["LIMIT", 1]]
+  Rendering lists/show.html.erb within layouts/application
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."list_id" = $1 LIMIT $2[0m  [["list_id", 3], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = $1[0m  [["list_id", 3]]
+  Rendered lists/show.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 76ms (Views: 69.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/lists/qwqrw" for ::1 at 2016-12-12 01:19:29 -0300
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"qwqrw"}
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "qwqrw"], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = $1[0m  [["list_id", 3]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = $1 AND "tasks"."priority" = $2[0m  [["list_id", 3], ["priority", "high"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."list_id" = $1 AND "tasks"."priority" = $2[0m  [["list_id", 3], ["priority", "high"]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = $1 AND "tasks"."priority" = $2[0m  [["list_id", 3], ["priority", "high"]]
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = $1 AND "tasks"."priority" = $2[0m  [["list_id", 3], ["priority", "medium"]]
+  Rendering lists/show.html.erb within layouts/application
+  Rendered lists/show.html.erb within layouts/application (11.3ms)
+Completed 500 Internal Server Error in 65535ms (ActiveRecord: 6.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `empty?' for nil:NilClass):
+    104:     <h3>Tasks on this list</h3>
+    105:   </div>
+    106:   <div class="box-body">
+    107:     <% unless @tasks_list.empty? %>
+    108:       <% @tasks_list.each do |task| %>
+    109:         <div>
+    110:           <form action=" <%= "/lists/#{@list.slug}/tasks/#{task.id}" %>" method="POST">
+  
+app/views/lists/show.html.erb:107:in `_app_views_lists_show_html_erb___198405681919288490_70096399278580'
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.4ms)
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/nitrnitr/.gem/ruby/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (58.2ms)
+Started GET "/lists/qwqrw" for ::1 at 2016-12-12 01:20:44 -0300
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"qwqrw"}
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "qwqrw"], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = $1 AND "tasks"."priority" = $2[0m  [["list_id", 3], ["priority", "high"]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = $1 AND "tasks"."priority" = $2[0m  [["list_id", 3], ["priority", "medium"]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = $1 AND "tasks"."priority" = $2[0m  [["list_id", 3], ["priority", "low"]]
+  Rendering lists/show.html.erb within layouts/application
+  Rendered lists/show.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 83ms (Views: 33.4ms | ActiveRecord: 5.5ms)
+
+
+Started POST "/lists/qwqrw/tasks" for ::1 at 2016-12-12 01:20:55 -0300
+Processing by TasksController#create as HTML
+  Parameters: {"task"=>{"description"=>"IGHHHIGHHH", "type"=>"SimpleTask", "priority"=>"high"}, "list_id"=>"qwqrw"}
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "qwqrw"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("type", "description", "priority", "state", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "SimpleTask"], ["description", "IGHHHIGHHH"], ["priority", "high"], ["state", "in_progress"], ["list_id", 3], ["created_at", 2016-12-12 04:20:55 UTC], ["updated_at", 2016-12-12 04:20:55 UTC]]
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/lists/qwqrw
+Completed 302 Found in 11ms (ActiveRecord: 6.1ms)
+
+
+Started GET "/lists/qwqrw" for ::1 at 2016-12-12 01:20:55 -0300
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"qwqrw"}
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."slug" = $1 LIMIT $2[0m  [["slug", "qwqrw"], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = $1 AND "tasks"."priority" = $2[0m  [["list_id", 3], ["priority", "high"]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = $1 AND "tasks"."priority" = $2[0m  [["list_id", 3], ["priority", "medium"]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = $1 AND "tasks"."priority" = $2[0m  [["list_id", 3], ["priority", "low"]]
+  Rendering lists/show.html.erb within layouts/application
+  Rendered lists/show.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 43ms (Views: 36.3ms | ActiveRecord: 1.1ms)
+
+

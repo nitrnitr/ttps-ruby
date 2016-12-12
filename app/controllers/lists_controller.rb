@@ -20,6 +20,7 @@ class ListsController < ApplicationController
 
   def show
     @task = Task.new
+    @tasks_list = @list.tasks.where(priority: 'high') + @list.tasks.where(priority: 'medium') + @list.tasks.where(priority: 'low')
   end
 
   def update
